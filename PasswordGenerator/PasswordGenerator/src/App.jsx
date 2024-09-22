@@ -6,6 +6,7 @@ function App() {
   const [numberAllowed, setNumberAllowed] = useState(false)
   const [charAllowed, setCharAllowed] = useState(false)
   const [password , setPassword] = useState("")
+  const [isCopied,setIsCopied] = useState(false)
 
   const passwordGenerator = useCallback(()=> {
     let pass="";
@@ -33,7 +34,12 @@ function App() {
   const passwordRef=useRef(null)
   const copyPassword = useCallback(()=>{
     passwordRef.current?.select();
-    window.navigator.clipboard.writeText(password);
+    window.navigator.clipboard.writeText(password).then(()=>{
+      setIsCopied(true);
+      setTimeout(()=>{
+        setIsCopied(false);
+      },2000)
+    });
   },[password])
 
 
@@ -43,9 +49,10 @@ function App() {
         <h1 className='text-center my-2'>Password Generator</h1>
         <div className='flex shadow rounded-lg overflow-hidden mb-4'>
           <input type="text" value={password} className='outline-none w-full py-1 px-3' placeholder='password' readOnly ref={passwordRef}/>
-          <button className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0' onClick={()=>{
+          <button data-ripple-light="true" className='rounded-mg outline-none bg-blue-800 text-white px-3 py-0.5 shrink-0 border border-transparent text-center transition-all shadow-md hover:shadow-lg focus:bg-blue-700 focus:shadow-none active:bg-blue-700 hover:bg-blue-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none' onClick={()=>{
             copyPassword()
           }}>copy</button>
+          
         </div>
         <div className='flex text-sm gap-x-2'>
           <div className='flex items-center gap-x-1'> 
@@ -70,6 +77,11 @@ function App() {
             <label htmlFor='charInput'>Characters</label>
           </div>
         </div>
+        {isCopied && (
+          <div className="text-center text-green-400 mb-2">
+            Copied!
+          </div>
+        )}
       </div>
     </>
   )
