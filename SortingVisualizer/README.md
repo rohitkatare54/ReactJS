@@ -47,13 +47,3 @@ Select the sorting algorithm you wish to visualize.
 Adjust the array size using the provided slider.
 Click the "Sort" button to start the visualization.
 Observe the color changes and animations as the sorting algorithm processes the data.
-
-
-<img width="1440" alt="Screenshot 2024-10-11 at 6 30 05 PM" src="https://github.com/user-attachments/assets/ecbc179b-1f43-46af-894a-dc9d8dc10515">
-
-
-<img width="1440" alt="Screenshot 2024-10-11 at 6 30 54 PM" src="https://github.com/user-attachments/assets/83fc267c-af86-448a-922b-b98cf7ed7b84">
-
-<img width="1440" alt="Screenshot 2024-10-11 at 6 31 41 PM" src="https://github.com/user-attachments/assets/fdad6239-cd23-4a0b-a667-eda757fb2e83">
-
-
