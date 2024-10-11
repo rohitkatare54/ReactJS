@@ -30,7 +30,7 @@ A web-based application designed to visualize and demonstrate how various sortin
 
 Clone the repository:
    ```bash
-   git clone https://github.com//sorting-visualizer.git
+   git clone https://github.com/rohitkatare54/ReactJS/tree/main/SortingVisualizer
 
 cd sorting-visualizer
 
